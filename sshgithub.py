@@ -12,14 +12,17 @@ class SSHGithub():
 
     def __init__(self):
         configpath='/etc/sshgit.ini'
-        configpath='sshgit.ini'
         if not os.path.isfile(configpath):
             raise Exception('Config file not found : '+configpath)
+
         st = os.stat(configpath)
+
         #Other write access
         if bool(st.st_mode & stat.S_IWOTH):
             raise Exception('Invalid right on the config file must be 0600')
-        if int(st.st_mode & stat.ST_UID) != 0 or int(st.st_mode & stat.ST_GID) != 0 :
+
+        #Owner Check
+        if st.st_uid != 0 or st.st_gid != 0 :
             raise Exception('Config file bad ownership must be root:root')
 
         self.config = ConfigParser.ConfigParser()

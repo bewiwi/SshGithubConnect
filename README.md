@@ -9,7 +9,7 @@ and add the **AuthorizedKeysCommand** directive to your sshd configuration
 
 	# echo 'AuthorizedKeysCommand /root/sshgithub.py' >> /etc/ssh/sshd_config
 	# service sshd reload
-
+	
 ## Configuration
 The file configuration is **/etc/sshgit.ini**
 
@@ -21,8 +21,18 @@ This config file authorize gituser and gituser2 to connect to root and gituser t
 	[SERVER]
 	url=https://github.com/
 	#url=https://gitlab/
-
+	
 	[USER]
 	#sysuser=gituser,gituser2
 	root=gituser,gituser2
 	user2=gituser
+
+
+## TEST
+You can directly launch the command with the user
+
+	# sshgithub root
+	ssh-rsa AAAAB3NzaC1yc2EAA.....
+	ssh-rsa AAAAB3NzaC1yc2EAA.....
+	
+And you can try to connect to ssh with an authorized account.
