@@ -7,7 +7,7 @@ To install or update launch the install script.
 
 and add the **AuthorizedKeysCommand** directive to your sshd configuration
 
-	# echo 'AuthorizedKeysCommand /root/sshgithub.py' >> /etc/ssh/sshd_config
+	# echo 'AuthorizedKeysCommand /usr/bin/sshgithub' >> /etc/ssh/sshd_config
 	# service sshd reload
 	
 ## Configuration
