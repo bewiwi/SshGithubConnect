@@ -36,3 +36,10 @@ You can directly launch the command with the user
 	ssh-rsa AAAAB3NzaC1yc2EAA.....
 	
 And you can try to connect to ssh with an authorized account.
+
+## DEV
+Just use vagrant
+
+	(host)    $ vagrant up
+	(host)	  $ vagrant ssh
+	(vagrant) $ sudo /vagrant/install.sh && sudo sshgithub root	

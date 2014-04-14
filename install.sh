@@ -14,6 +14,9 @@ cp sshgithub.py $BinFile
 chown root:root $BinFile
 chmod 500 $BinFile
 
-[ -e $ConfFile ] || cp sshgit.ini $ConfFile
-chown root:root $ConfFile
-chmod 600 $ConfFile
+if [ ! -e $ConfFile ]
+then
+    cp sshgit.ini $ConfFile
+    chown root:root $ConfFile
+    chmod 600 $ConfFile
+fi
