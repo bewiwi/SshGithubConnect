@@ -21,7 +21,11 @@ This config file authorize gituser and gituser2 to connect to root and gituser t
 	[SERVER]
 	url=https://github.com/
 	#url=https://gitlab/
-	
+	#Time in minute to keep the key without ask the server
+	# 0 means disable
+	cache_time=60
+	cache_dir=/var/cache/sshgit/
+
 	[USER]
 	#sysuser=gituser,gituser2
 	root=gituser,gituser2
